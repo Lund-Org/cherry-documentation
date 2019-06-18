@@ -1,0 +1,113 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Adding routes · Cherry Documentation</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;Now we have an awesome server which is running with Cherry. And like every HTTP(s) server, we need routes to match the request and a process.&lt;/p&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Adding routes · Cherry Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://lund-org.github.io/"/><meta property="og:description" content="&lt;p&gt;Now we have an awesome server which is running with Cherry. And like every HTTP(s) server, we need routes to match the request and a process.&lt;/p&gt;
+"/><meta property="og:image" content="https://lund-org.github.io/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://lund-org.github.io/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="alternate" type="application/atom+xml" href="https://lund-org.github.io/blog/atom.xml" title="Cherry Documentation Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://lund-org.github.io/blog/feed.xml" title="Cherry Documentation Blog RSS Feed"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/favicon.ico" alt="Cherry Documentation"/><h2 class="headerTitleWithLogo">Cherry Documentation</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/getting-started/overview" target="_self">Docs</a></li><li class=""><a href="/help" target="_self">Help</a></li><li class=""><a href="/blog/" target="_self">Blog</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Getting Started</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Getting Started</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/getting-started/overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/installation">Installation</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/server-creation">Create a server</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/getting-started/adding-routes">Adding routes</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/next">What&#x27;s next ?</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Routing</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/routing/public">Public resources</a></li><li class="navListItem"><a class="navItem" href="/docs/routing/basic">Basic routes</a></li><li class="navListItem"><a class="navItem" href="/docs/routing/context">Route contexts</a></li><li class="navListItem"><a class="navItem" href="/docs/routing/middlewares">Middlewares</a></li><li class="navListItem"><a class="navItem" href="/docs/routing/redirections">Redirections</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Views &amp; Server response</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/views/default-pages">Default error pages</a></li><li class="navListItem"><a class="navItem" href="/docs/views/html">Render a html view</a></li><li class="navListItem"><a class="navItem" href="/docs/views/json">Render a json payload</a></li><li class="navListItem"><a class="navItem" href="/docs/views/download">Download response</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Plugins</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/plugins/overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/view-rendering">View rendering plugins</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/orm">ORM Plugins</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Miscellaneous features</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/misc/hooks">Hooks</a></li><li class="navListItem"><a class="navItem" href="/docs/misc/server-config">Server Config</a></li><li class="navListItem"><a class="navItem" href="/docs/misc/coming">Coming Soon...</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Adding routes</h1></header><article><div><span><p>Now we have an awesome server which is running with Cherry. And like every HTTP(s) server, we need routes to match the request and a process.</p>
+<h2><a class="anchor" aria-hidden="true" id="adding-a-basic-route"></a><a href="#adding-a-basic-route" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Adding a basic route</h2>
+<h3><a class="anchor" aria-hidden="true" id="an-app-without-routes"></a><a href="#an-app-without-routes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>An app without routes</h3>
+<p>You already discovered the <code>servers</code> key in the object of configuration. Let's remind what is the code we have :</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">const</span> Cherry = <span class="hljs-built_in">require</span>(<span class="hljs-string">'@lund-org/cherry'</span>)
+
+<span class="hljs-keyword">const</span> options = {
+  <span class="hljs-attr">servers</span>: [
+    { <span class="hljs-attr">port</span>: <span class="hljs-number">80</span> }
+  ]
+}
+<span class="hljs-keyword">const</span> cherry = <span class="hljs-keyword">new</span> Cherry()
+cherry.configure(options)
+cherry.start(options)
+</code></pre>
+<p>To avoid port collision with the other application you might have on your computer, I will use a server configured for the port 3000 like every JS app documentation, which is kind of a &quot;dev port&quot;.</p>
+<h3><a class="anchor" aria-hidden="true" id="a-quick-explanation-of-the-routes"></a><a href="#a-quick-explanation-of-the-routes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>A quick explanation of the routes</h3>
+<p>To add routes, we need a new option which is.... <code>routes</code> obviously. Cherry can manage multiple types of route, you will see that in the <a href="/docs/routing/public">Routing chapter</a> of the documentation.</p>
+<p>In this getting started, we will configure our application with a simple route <code>/hello-world</code>. This route needs at least three datas :</p>
+<ul>
+<li>The <code>type</code> of route which is in our case &quot;ROUTE&quot;</li>
+<li>The <code>path</code> to know what are the requests which need to match</li>
+<li>The <code>callback</code> which is -as you probably guessed- the function executed when the path match</li>
+</ul>
+<p>The configured routes need to be under the key <code>router</code>. For this example, I will not go more deeply into the basic route configuration, just trust me for now.</p>
+<p>So if you add what we learned :</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">const</span> Cherry = <span class="hljs-built_in">require</span>(<span class="hljs-string">'@lund-org/cherry'</span>)
+
+<span class="hljs-keyword">const</span> options = {
+  <span class="hljs-attr">servers</span>: [
+    { <span class="hljs-attr">port</span>: <span class="hljs-number">3000</span> }
+  ],
+  <span class="hljs-attr">routes</span>: {
+    <span class="hljs-attr">router</span>: [
+      {
+        <span class="hljs-attr">type</span>: <span class="hljs-string">'ROUTE'</span>,
+        <span class="hljs-attr">path</span>: <span class="hljs-string">'/hello-world'</span>,
+        <span class="hljs-attr">callback</span>: <span class="hljs-function">(<span class="hljs-params">request, response</span>) =&gt;</span> {
+          <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'I was here !'</span>)
+          <span class="hljs-keyword">return</span> <span class="hljs-string">'hello world'</span>
+        }
+      }
+    ]
+  }
+}
+<span class="hljs-keyword">const</span> cherry = <span class="hljs-keyword">new</span> Cherry()
+cherry.configure(options)
+cherry.start(options)
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="an-app-with-routes"></a><a href="#an-app-with-routes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>An app with routes</h3>
+<p>Now with our application, we can try 2 things.</p>
+<p>First of all, the obvious one is to visit <a href="http://localhost:3000/hello-world">/hello-world</a>. When we reach this url, we have our <code>console.log</code> in the terminal (each time we refresh, a new log is printed). On the page, you can see the text we returned in the callback method.</p>
+<p>The other thing I wanted to show you is if you try to reach the <a href="http://localhost:3000">root of your application</a>. We didn't configure this root, but a page appears. This is the default 404 page that you can configure (see the <a href="/docs/views/default-pages">Views &amp; Server response chapter</a>)</p>
+<p>Of course, this is an example, you might sort you routes in another file and import it in your configuration to have a code cleaner.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/getting-started/server-creation"><span class="arrow-prev">← </span><span>Create a server</span></a><a class="docs-next button" href="/docs/getting-started/next"><span>What&#x27;s next ?</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#adding-a-basic-route">Adding a basic route</a><ul class="toc-headings"><li><a href="#an-app-without-routes">An app without routes</a></li><li><a href="#a-quick-explanation-of-the-routes">A quick explanation of the routes</a></li><li><a href="#an-app-with-routes">An app with routes</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/favicon.ico" alt="Cherry Documentation" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/en/getting-started/overview.html">Getting Started</a><a href="/docs/en/doc2.html">Guides (TODO)</a><a href="/docs/en/doc3.html">API Reference (TODO)</a></div><div><h5>Community</h5><a href="/en/users.html">User Showcase (TODO)</a><a href="https://discord.gg/gJyu9p2">Project Chat</a><a href="https://twitter.com/lundprod" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/blog">Blog</a><a href="https://github.com/lund-org/">GitHub</a><a class="github-button" href="https://github.com/lund-org/cherry" data-icon="octicon-star" data-count-href="/lund-org/cherry" data-show-count="true" data-count-aria-label="# cherry on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2019 Lund-Org</section></footer></div></body></html>

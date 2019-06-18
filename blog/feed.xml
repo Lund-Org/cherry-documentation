@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>Cherry Documentation Blog</title>
+        <link>https://lund-org.github.io/blog</link>
+        <description>The best place to stay up-to-date with the latest Cherry Documentation news and events.</description>
+        <lastBuildDate>Sun, 16 Jun 2019 06:00:00 GMT</lastBuildDate>
+        <docs>http://blogs.law.harvard.edu/tech/rss</docs>
+        <generator>Feed for Node.js</generator>
+        <image>
+            <title>Cherry Documentation Blog</title>
+            <url>https://lund-org.github.io/img/favicon.ico</url>
+            <link>https://lund-org.github.io/blog</link>
+        </image>
+        <copyright>Copyright © 2019 Lund-Org</copyright>
+        <item>
+            <title><![CDATA[Sample blog article]]></title>
+            <link>https://lund-org.github.io/blog/2019/06/16/sample.html</link>
+            <guid>https://lund-org.github.io/blog/2019/06/16/sample.html</guid>
+            <pubDate>Sun, 16 Jun 2019 06:00:00 GMT</pubDate>
+            <description><![CDATA[<p>This blog post will test file name parsing issues when periods are present.</p> ]]></description>
+        </item>
+    </channel>
+</rss>

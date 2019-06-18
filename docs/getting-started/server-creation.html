@@ -1,0 +1,104 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Create a server · Cherry Documentation</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;Now, you have Cherry installed in your dependencies. To start with the framework, we&#x27;ll need a HTTP server to receive client requests and to give them responses.&lt;/p&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Create a server · Cherry Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://lund-org.github.io/"/><meta property="og:description" content="&lt;p&gt;Now, you have Cherry installed in your dependencies. To start with the framework, we&#x27;ll need a HTTP server to receive client requests and to give them responses.&lt;/p&gt;
+"/><meta property="og:image" content="https://lund-org.github.io/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://lund-org.github.io/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="alternate" type="application/atom+xml" href="https://lund-org.github.io/blog/atom.xml" title="Cherry Documentation Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://lund-org.github.io/blog/feed.xml" title="Cherry Documentation Blog RSS Feed"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/favicon.ico" alt="Cherry Documentation"/><h2 class="headerTitleWithLogo">Cherry Documentation</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/getting-started/overview" target="_self">Docs</a></li><li class=""><a href="/help" target="_self">Help</a></li><li class=""><a href="/blog/" target="_self">Blog</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Getting Started</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Getting Started</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/getting-started/overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/installation">Installation</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/getting-started/server-creation">Create a server</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/adding-routes">Adding routes</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/next">What&#x27;s next ?</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Routing</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/routing/public">Public resources</a></li><li class="navListItem"><a class="navItem" href="/docs/routing/basic">Basic routes</a></li><li class="navListItem"><a class="navItem" href="/docs/routing/context">Route contexts</a></li><li class="navListItem"><a class="navItem" href="/docs/routing/middlewares">Middlewares</a></li><li class="navListItem"><a class="navItem" href="/docs/routing/redirections">Redirections</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Views &amp; Server response</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/views/default-pages">Default error pages</a></li><li class="navListItem"><a class="navItem" href="/docs/views/html">Render a html view</a></li><li class="navListItem"><a class="navItem" href="/docs/views/json">Render a json payload</a></li><li class="navListItem"><a class="navItem" href="/docs/views/download">Download response</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Plugins</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/plugins/overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/view-rendering">View rendering plugins</a></li><li class="navListItem"><a class="navItem" href="/docs/plugins/orm">ORM Plugins</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Miscellaneous features</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/misc/hooks">Hooks</a></li><li class="navListItem"><a class="navItem" href="/docs/misc/server-config">Server Config</a></li><li class="navListItem"><a class="navItem" href="/docs/misc/coming">Coming Soon...</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Create a server</h1></header><article><div><span><p>Now, you have Cherry installed in your dependencies. To start with the framework, we'll need a HTTP server to receive client requests and to give them responses.</p>
+<h2><a class="anchor" aria-hidden="true" id="instanciate-a-server"></a><a href="#instanciate-a-server" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Instanciate a server</h2>
+<p>To load your dependency installed previously, like any other npm module, you need to import it :</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">const</span> Cherry = <span class="hljs-built_in">require</span>(<span class="hljs-string">'@lund-org/cherry'</span>)
+</code></pre>
+<p>Or if you use Typescript, Babel or a Node.js version which manage the ES6 import/export :</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> Cherry <span class="hljs-keyword">from</span> <span class="hljs-string">'@lund-org/cherry'</span>
+</code></pre>
+<p>With your Cherry class, you can now instanciate a Cherry server. The basic case will be with this configuration :</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">const</span> options = {
+  <span class="hljs-attr">servers</span>: [
+    { <span class="hljs-attr">port</span>: <span class="hljs-number">80</span> }
+  ]
+}
+<span class="hljs-keyword">const</span> cherry = <span class="hljs-keyword">new</span> Cherry()
+cherry.configure(options)
+cherry.start(options)
+</code></pre>
+<p>As you can see, Cherry takes an option object to be configured, here it describes the server port of our instance.</p>
+<p>And.... it's done. I mean almost, if you try to only use this code, it will not work because a HTTP server with no route is useless, so you will get an error, but it's the next topic of the documentation.</p>
+<p>Of course to run your code, you just have to execute this :</p>
+<pre><code class="hljs css language-bash">$ node your_file.js
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="instanciate-multiple-servers"></a><a href="#instanciate-multiple-servers" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Instanciate multiple servers</h2>
+<p>But sometimes you need to bind multiple ports, with multiple instances. For example, the previous code was an instance of server bound to the default HTTP port. But how can we manage the HTTP and the HTTPS at the same time ?
+Here is the answer :</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">const</span> options = {
+  <span class="hljs-attr">servers</span>: [
+    { <span class="hljs-attr">port</span>: <span class="hljs-number">80</span> },
+    {
+      <span class="hljs-attr">port</span>: <span class="hljs-number">443</span>,
+      <span class="hljs-attr">https</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">httpsOptions</span>: {
+        <span class="hljs-attr">key</span>: fs.readFileSync(<span class="hljs-string">'/path/to/the/key.pem'</span>)),
+        <span class="hljs-attr">cert</span>: fs.readFileSync(<span class="hljs-string">'/path/to/the/cert.pem'</span>))
+      }
+    }
+  ]
+}
+<span class="hljs-keyword">const</span> cherry = <span class="hljs-keyword">new</span> Cherry()
+cherry.configure(options)
+cherry.start(options)
+</code></pre>
+<p>This will create 2 identical servers, one managing the HTTP and one managing the HTTPS. I used the default ports but you're free to change the values of course.</p>
+<p>Let's see now what we can do to use our Cherry application.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/getting-started/installation"><span class="arrow-prev">← </span><span>Installation</span></a><a class="docs-next button" href="/docs/getting-started/adding-routes"><span>Adding routes</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#instanciate-a-server">Instanciate a server</a></li><li><a href="#instanciate-multiple-servers">Instanciate multiple servers</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/favicon.ico" alt="Cherry Documentation" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/en/getting-started/overview.html">Getting Started</a><a href="/docs/en/doc2.html">Guides (TODO)</a><a href="/docs/en/doc3.html">API Reference (TODO)</a></div><div><h5>Community</h5><a href="/en/users.html">User Showcase (TODO)</a><a href="https://discord.gg/gJyu9p2">Project Chat</a><a href="https://twitter.com/lundprod" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/blog">Blog</a><a href="https://github.com/lund-org/">GitHub</a><a class="github-button" href="https://github.com/lund-org/cherry" data-icon="octicon-star" data-count-href="/lund-org/cherry" data-show-count="true" data-count-aria-label="# cherry on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2019 Lund-Org</section></footer></div></body></html>
