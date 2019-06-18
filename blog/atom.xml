@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://lund-org.github.io/blog</id>
+    <id>https://lund-org.github.io/cherry-documentation/blog</id>
     <title>Cherry Documentation Blog</title>
     <updated>2019-06-16T06:00:00Z</updated>
     <generator>Feed for Node.js</generator>
-    <link rel="alternate" href="https://lund-org.github.io/blog"/>
+    <link rel="alternate" href="https://lund-org.github.io/cherry-documentation/blog"/>
     <subtitle>The best place to stay up-to-date with the latest Cherry Documentation news and events.</subtitle>
-    <logo>https://lund-org.github.io/img/favicon.ico</logo>
+    <logo>https://lund-org.github.io/cherry-documentation/img/favicon.ico</logo>
     <rights>Copyright © 2019 Lund-Org</rights>
     <entry>
         <title type="html"><![CDATA[Sample blog article]]></title>
-        <id>https://lund-org.github.io/blog/2019/06/16/sample.html</id>
-        <link href="https://lund-org.github.io/blog/2019/06/16/sample.html">
+        <id>https://lund-org.github.io/cherry-documentation/blog/2019/06/16/sample.html</id>
+        <link href="https://lund-org.github.io/cherry-documentation/blog/2019/06/16/sample.html">
         </link>
         <updated>2019-06-16T06:00:00Z</updated>
         <summary type="html"><![CDATA[<p>This blog post will test file name parsing issues when periods are present.</p> ]]></summary>
