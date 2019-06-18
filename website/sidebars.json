@@ -1,0 +1,35 @@
+{
+  "docs": {
+    "Getting Started": [
+      "getting-started/overview",
+      "getting-started/installation",
+      "getting-started/server-creation",
+      "getting-started/adding-routes",
+      "getting-started/next"
+    ],
+    "Routing": [
+      "routing/public",
+      "routing/basic",
+      "routing/context",
+      "routing/middlewares",
+      "routing/redirections"
+    ],
+    "Views & Server response": [
+      "views/default-pages",
+      "views/html",
+      "views/json",
+      "views/download"
+    ],
+    "Plugins": [
+      "plugins/overview",
+      "plugins/view-rendering",
+      "plugins/orm",
+      "plugins/creation"
+    ],
+    "Miscellaneous features": [
+      "misc/hooks",
+      "misc/server-config",
+      "misc/coming"
+    ]
+  }
+}
