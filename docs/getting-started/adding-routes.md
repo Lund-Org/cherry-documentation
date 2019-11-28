@@ -13,6 +13,7 @@ You already discovered the `servers` key in the object of configuration. Let's r
 
 
 ```javascript
+
 const Cherry = require('@lund-org/cherry')
 
 const options = {
@@ -23,6 +24,7 @@ const options = {
 const cherry = new Cherry()
 cherry.configure(options)
 cherry.start(options)
+
 ```
 
 To avoid port collision with the other application you might have on your computer, I will use a server configured for the port 3000 like every JS app documentation, which is kind of a "dev port".
@@ -42,6 +44,7 @@ The configured routes need to be under the key `router`. For this example, I wil
 So if you add what we learned :
 
 ```javascript
+
 const Cherry = require('@lund-org/cherry')
 
 const options = {
@@ -64,6 +67,7 @@ const options = {
 const cherry = new Cherry()
 cherry.configure(options)
 cherry.start(options)
+
 ```
 
 ### An app with routes

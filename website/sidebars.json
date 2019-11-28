@@ -30,6 +30,9 @@
       "misc/hooks",
       "misc/server-config",
       "misc/coming"
+    ],
+    "Best Practices": [
+      "best-practices"
     ]
   }
 }
