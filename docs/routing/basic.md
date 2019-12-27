@@ -314,4 +314,93 @@ The example is not accurate because we don't have a view for the form before cal
 
 ### The profile/delete/update route
 
-You should ask, why do I group the 3 actions together ? The answer is pretty simple : Because it uses the route parameters which is the last thing to show to you.
+You should ask, why do I group the 3 actions together ? The answer is pretty simple : Because it uses the route parameters which is the last thing to show to you. Indeed, to update/delete/get the information of a specific user, we need to know which users we want to work with, and we can do it by passing the id of the entity to manipulate in the route. Here are our new routes :
+
+```javascript
+// routes.js
+const UserIndexController = require('../modules/users/IndexController')
+
+module.exports = {
+  router: [
+    // ... previous routes here
+    {
+      type: 'ROUTE',
+      path: '/users/:id',
+      callback: (request, response) => {
+        const ctrl = new UserIndexController()
+        return ctrl.show(request, response)
+      },
+      method: ['GET']
+    },
+    {
+      type: 'ROUTE',
+      path: '/users/:id',
+      callback: (request, response) => {
+        const ctrl = new UserIndexController()
+        return ctrl.update(request, response)
+      },
+      method: ['PATCH']
+    },
+    {
+      type: 'ROUTE',
+      path: '/users/:id',
+      callback: (request, response) => {
+        const ctrl = new UserIndexController()
+        return ctrl.delete(request, response)
+      },
+      method: ['DELETE']
+    }
+  ]
+}
+
+```
+
+As you can see, every paths are the same, the only differences are the HTTP verb and of course the callback. Now, we can add more validation rules and so, some security. Imagine the identifier of the user is a classic number, we don't want to accept to match the route. It will result with a 404 (because no matching route have been found) which is ok, because even if letters were in the identifier, it would have failed to find an user and it would have returned a 404 anyway.
+
+SO. Let's add to our previous code the rules to check if it's a number :
+
+```javascript
+// routes.js
+const UserIndexController = require('../modules/users/IndexController')
+
+module.exports = {
+  router: [
+    // ... previous routes here
+    {
+      type: 'ROUTE',
+      path: '/users/:id',
+      callback: (request, response) => {
+        const ctrl = new UserIndexController()
+        return ctrl.show(request, response)
+      },
+      method: ['GET'],
+      rules: { id: /\d+/ }
+    },
+    {
+      type: 'ROUTE',
+      path: '/users/:id',
+      callback: (request, response) => {
+        const ctrl = new UserIndexController()
+        return ctrl.update(request, response)
+      },
+      method: ['PATCH'],
+      rules: { id: /\d+/ }
+    },
+    {
+      type: 'ROUTE',
+      path: '/users/:id',
+      callback: (request, response) => {
+        const ctrl = new UserIndexController()
+        return ctrl.delete(request, response)
+      },
+      method: ['DELETE'],
+      rules: { id: /\d+/ }
+    }
+  ]
+}
+
+```
+
+### Route parameters
+
+With this regex, we're now sure to have only numbers as id. Now, you just have to use this id. How to do it ? It's pretty easy, you can access to the route parameters through the variable of the request like this : `request.routeParameters.id`. The name is taken from the name you put in the route path.
