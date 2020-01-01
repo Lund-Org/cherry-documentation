@@ -167,10 +167,10 @@ In Cherry, we have 3 types of routes.
 |---|---|---|---|---|
 |path|❌|string&#124;regex|The format of the url path|-|
 |callback|❌|function|The function to execute when the url is reached|-|
-|method|✔|array<string>|The HTTP methods which should trigger the callback if the url match|`['*']`|
-|name|✔|string|The name of the route to identify it. Can be useful in hooks (see below)|`no-name-route-`|
+|method|✔|array&lt;string&gt;|The HTTP methods which should trigger the callback if the url match|`null`|
+|name|✔|string|The name of the route to identify it. Can be useful in hooks ([see later](misc/hooks.md))|`no-name-route-`|
 |rules|✔|object|The pattern for the parameters in the routes. The key is the parameter name, the value the regex to match|`{}`|
-|middlewares|✔|array<string>|The list of the middleware to apply (see later)|`[]`|
+|middlewares|✔|array&lt;string&gt;|The list of the middleware to apply ([see later](routing/middlewares.md))|`[]`|
 
 - The third type of route will be explain in the next chapter, it's `ROUTE_CONTEXT` which represents a context
 
@@ -404,3 +404,6 @@ module.exports = {
 ### Route parameters
 
 With this regex, we're now sure to have only numbers as id. Now, you just have to use this id. How to do it ? It's pretty easy, you can access to the route parameters through the variable of the request like this : `request.routeParameters.id`. The name is taken from the name you put in the route path.
+
+
+In the next chapter, we will see the type of route "context".
