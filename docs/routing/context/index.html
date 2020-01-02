@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Route contexts · Cherry Documentation</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="context"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Route contexts · Cherry Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://lund-org.github.io/cherry-documentation/"/><meta property="og:description" content="context"/><meta property="og:image" content="https://lund-org.github.io/cherry-documentation/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://lund-org.github.io/cherry-documentation/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/cherry-documentation/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="alternate" type="application/atom+xml" href="https://lund-org.github.io/cherry-documentation/blog/atom.xml" title="Cherry Documentation Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://lund-org.github.io/cherry-documentation/blog/feed.xml" title="Cherry Documentation Blog RSS Feed"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/cherry-documentation/js/scrollSpy.js"></script><link rel="stylesheet" href="/cherry-documentation/css/main.css"/><script src="/cherry-documentation/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/cherry-documentation/"><img class="logo" src="/cherry-documentation/img/favicon.ico" alt="Cherry Documentation"/><h2 class="headerTitleWithLogo">Cherry Documentation</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/cherry-documentation/docs/getting-started/overview" target="_self">Docs</a></li><li class=""><a href="/cherry-documentation/help" target="_self">Help</a></li><li class=""><a href="/cherry-documentation/blog/" target="_self">Blog</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Routing</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Getting Started</h3><ul class=""><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/getting-started/overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/getting-started/installation">Installation</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/getting-started/server-creation">Create a server</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/getting-started/adding-routes">Adding routes</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/getting-started/next">What&#x27;s next ?</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Routing</h3><ul class=""><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/routing/public">Public resources</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/routing/basic">Basic routes</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/cherry-documentation/docs/routing/context">Route contexts</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/routing/middlewares">Middlewares</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/routing/redirections">Redirections</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Views &amp; Server response</h3><ul class=""><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/views/default-pages">Default error pages</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/views/html">Render a html view</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/views/json">Render a json payload</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/views/download">Download response</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Plugins</h3><ul class=""><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/plugins/overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/plugins/view-rendering">View rendering plugins</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/plugins/orm">ORM Plugins</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Miscellaneous features</h3><ul class=""><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/misc/hooks">Hooks</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/misc/server-config">Server Config</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/misc/coming">Coming Soon...</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Best Practices</h3><ul class=""><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/best-practices">Best Practices</a></li></ul></div></div></section></div><script>
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Route contexts · Cherry Documentation</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="The context route is a tool to help you to build routes easily."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Route contexts · Cherry Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://lund-org.github.io/cherry-documentation/"/><meta property="og:description" content="The context route is a tool to help you to build routes easily."/><meta property="og:image" content="https://lund-org.github.io/cherry-documentation/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://lund-org.github.io/cherry-documentation/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/cherry-documentation/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="alternate" type="application/atom+xml" href="https://lund-org.github.io/cherry-documentation/blog/atom.xml" title="Cherry Documentation Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://lund-org.github.io/cherry-documentation/blog/feed.xml" title="Cherry Documentation Blog RSS Feed"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/cherry-documentation/js/scrollSpy.js"></script><link rel="stylesheet" href="/cherry-documentation/css/main.css"/><script src="/cherry-documentation/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/cherry-documentation/"><img class="logo" src="/cherry-documentation/img/favicon.ico" alt="Cherry Documentation"/><h2 class="headerTitleWithLogo">Cherry Documentation</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/cherry-documentation/docs/getting-started/overview" target="_self">Docs</a></li><li class=""><a href="/cherry-documentation/help" target="_self">Help</a></li><li class=""><a href="/cherry-documentation/blog/" target="_self">Blog</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Routing</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Getting Started</h3><ul class=""><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/getting-started/overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/getting-started/installation">Installation</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/getting-started/server-creation">Create a server</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/getting-started/adding-routes">Adding routes</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/getting-started/next">What&#x27;s next ?</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Routing</h3><ul class=""><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/routing/public">Public resources</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/routing/basic">Basic routes</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/cherry-documentation/docs/routing/context">Route contexts</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/routing/middlewares">Middlewares</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/routing/redirections">Redirections</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Views &amp; Server response</h3><ul class=""><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/views/default-pages">Default error pages</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/views/html">Render a html view</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/views/json">Render a json payload</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/views/download">Download response</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Plugins</h3><ul class=""><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/plugins/overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/plugins/view-rendering">View rendering plugins</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/plugins/orm">ORM Plugins</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Miscellaneous features</h3><ul class=""><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/misc/hooks">Hooks</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/misc/server-config">Server Config</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/misc/coming">Coming Soon...</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Best Practices</h3><ul class=""><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/best-practices">Best Practices</a></li></ul></div></div></section></div><script>
             var coll = document.getElementsByClassName('collapsible');
             var checkActiveCategory = true;
             for (var i = 0; i < coll.length; i++) {
@@ -54,5 +54,151 @@
                 };
               }
             });
-        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Route contexts</h1></header><article><div><span><p>context</p>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/cherry-documentation/docs/routing/basic"><span class="arrow-prev">← </span><span>Basic routes</span></a><a class="docs-next button" href="/cherry-documentation/docs/routing/middlewares"><span>Middlewares</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/cherry-documentation/" class="nav-home"><img src="/cherry-documentation/img/favicon.ico" alt="Cherry Documentation" width="66" height="58"/></a><div><h5>Docs</h5><a href="/cherry-documentation/docs/en/getting-started/overview.html">Getting Started</a><a href="/cherry-documentation/docs/en/doc2.html">Guides (TODO)</a><a href="/cherry-documentation/docs/en/doc3.html">API Reference (TODO)</a></div><div><h5>Community</h5><a href="/cherry-documentation/en/users.html">User Showcase (TODO)</a><a href="https://discord.gg/gJyu9p2">Project Chat</a><a href="https://twitter.com/lundprod" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/cherry-documentation/blog">Blog</a><a href="https://github.com/lund-org/">GitHub</a><a class="github-button" href="https://github.com/lund-org/cherry" data-icon="octicon-star" data-count-href="/lund-org/cherry" data-show-count="true" data-count-aria-label="# cherry on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2019 Lund-Org</section></footer></div></body></html>
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Route contexts</h1></header><article><div><span><p>The context route is a tool to help you to build routes easily.</p>
+<p>Remember our routes from the previous chapter with a REST CRUD API for an user entity :</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// routes.js</span>
+<span class="hljs-keyword">const</span> UserIndexController = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../modules/users/IndexController'</span>)
+
+<span class="hljs-built_in">module</span>.exports = {
+  <span class="hljs-attr">router</span>: [
+    {
+      <span class="hljs-attr">type</span>: <span class="hljs-string">'ROUTE'</span>,
+      <span class="hljs-attr">path</span>: <span class="hljs-string">'/users'</span>,
+      <span class="hljs-attr">callback</span>: <span class="hljs-function">(<span class="hljs-params">request, response</span>) =&gt;</span> {
+        <span class="hljs-keyword">const</span> ctrl = <span class="hljs-keyword">new</span> UserIndexController()
+        <span class="hljs-keyword">return</span> ctrl.index(request, response)
+      },
+      <span class="hljs-attr">method</span>: [<span class="hljs-string">'GET'</span>]
+    },
+    {
+      <span class="hljs-attr">type</span>: <span class="hljs-string">'ROUTE'</span>,
+      <span class="hljs-attr">path</span>: <span class="hljs-string">'/users'</span>,
+      <span class="hljs-attr">callback</span>: <span class="hljs-function">(<span class="hljs-params">request, response</span>) =&gt;</span> {
+        <span class="hljs-keyword">const</span> ctrl = <span class="hljs-keyword">new</span> UserIndexController()
+        <span class="hljs-keyword">return</span> ctrl.create(request, response)
+      },
+      <span class="hljs-attr">method</span>: [<span class="hljs-string">'POST'</span>]
+    },
+    {
+      <span class="hljs-attr">type</span>: <span class="hljs-string">'ROUTE'</span>,
+      <span class="hljs-attr">path</span>: <span class="hljs-string">'/users/:id'</span>,
+      <span class="hljs-attr">callback</span>: <span class="hljs-function">(<span class="hljs-params">request, response</span>) =&gt;</span> {
+        <span class="hljs-keyword">const</span> ctrl = <span class="hljs-keyword">new</span> UserIndexController()
+        <span class="hljs-keyword">return</span> ctrl.show(request, response)
+      },
+      <span class="hljs-attr">method</span>: [<span class="hljs-string">'GET'</span>],
+      <span class="hljs-attr">rules</span>: { <span class="hljs-attr">id</span>: <span class="hljs-regexp">/\d+/</span> }
+    },
+    {
+      <span class="hljs-attr">type</span>: <span class="hljs-string">'ROUTE'</span>,
+      <span class="hljs-attr">path</span>: <span class="hljs-string">'/users/:id'</span>,
+      <span class="hljs-attr">callback</span>: <span class="hljs-function">(<span class="hljs-params">request, response</span>) =&gt;</span> {
+        <span class="hljs-keyword">const</span> ctrl = <span class="hljs-keyword">new</span> UserIndexController()
+        <span class="hljs-keyword">return</span> ctrl.update(request, response)
+      },
+      <span class="hljs-attr">method</span>: [<span class="hljs-string">'PATCH'</span>],
+      <span class="hljs-attr">rules</span>: { <span class="hljs-attr">id</span>: <span class="hljs-regexp">/\d+/</span> }
+    },
+    {
+      <span class="hljs-attr">type</span>: <span class="hljs-string">'ROUTE'</span>,
+      <span class="hljs-attr">path</span>: <span class="hljs-string">'/users/:id'</span>,
+      <span class="hljs-attr">callback</span>: <span class="hljs-function">(<span class="hljs-params">request, response</span>) =&gt;</span> {
+        <span class="hljs-keyword">const</span> ctrl = <span class="hljs-keyword">new</span> UserIndexController()
+        <span class="hljs-keyword">return</span> ctrl.delete(request, response)
+      },
+      <span class="hljs-attr">method</span>: [<span class="hljs-string">'DELETE'</span>],
+      <span class="hljs-attr">rules</span>: { <span class="hljs-attr">id</span>: <span class="hljs-regexp">/\d+/</span> }
+    }
+  ]
+}
+
+</code></pre>
+<p>There are two things annoying in this example.</p>
+<ul>
+<li>Imagine a developer of your team add a new route for the user resource, he can add it at the end of the route file (because maybe he doesn't follow good practice or it's a test route which becomes finally a real route). If you remake your controller, it would be easier to locate all the routes as one block instead of scrolling or searching in the file</li>
+<li>It's annoying to duplicate informations like the <code>/users/</code> path for each route</li>
+</ul>
+<p>Here is an example to explain the second point above more clearly.
+Imagine you have an administration with a lot of paths beginning with <code>/admin/</code>, using the GET method. Each routes need to have a name prefixed with <code>&quot;admin-&quot;</code>. Finally, every route should have a security check (if the user is connected and has the permission) achieved thanks to a middlevare. You don't want to duplicate all these informations for each route. Here comes the context to help you.</p>
+<table>
+<thead>
+<tr><th>Option name</th><th>Optionnal</th><th>Value Type</th><th>Description</th><th>Default value</th></tr>
+</thead>
+<tbody>
+<tr><td>collection</td><td>❌</td><td>array&lt;object&gt;</td><td>The list of the routes which will be in the context</td><td>-</td></tr>
+<tr><td>name</td><td>✔</td><td>string</td><td>The prefix which will be append to the routes in the collection array</td><td><code>no-name-route-</code></td></tr>
+<tr><td>method</td><td>✔</td><td>array&lt;string&gt;</td><td>The HTTP methods which should trigger the callbacks for the routes in the collection. It becomes the default value for the routes without methods but will be override if a method is declared in the routes</td><td><code>null</code></td></tr>
+<tr><td>path</td><td>✔</td><td>string</td><td>The prefix for every route paths for the routes in the collection</td><td><code>/</code></td></tr>
+<tr><td>middlewares</td><td>✔</td><td>array&lt;string&gt;</td><td>The list of the middleware to apply for each routes in the collection (<a href="/cherry-documentation/docs/routing/middlewares">see later</a>)</td><td><code>[]</code></td></tr>
+<tr><td>rules</td><td>✔</td><td>object</td><td>The pattern for the parameters in the context path. The key is the parameter name, the value the regex to match</td><td><code>{}</code></td></tr>
+</tbody>
+</table>
+<p>With all these information, here what our user REST CRUD API will look like :</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// routes.js</span>
+<span class="hljs-keyword">const</span> UserIndexController = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../modules/users/IndexController'</span>)
+
+<span class="hljs-built_in">module</span>.exports = {
+  <span class="hljs-attr">router</span>: [
+    {
+      <span class="hljs-attr">type</span>: <span class="hljs-string">'ROUTE_CONTEXT'</span>,
+      <span class="hljs-attr">path</span>: <span class="hljs-string">'/users'</span>,
+      <span class="hljs-attr">name</span>: <span class="hljs-string">'users-'</span>,
+      <span class="hljs-attr">method</span>: [<span class="hljs-string">'GET'</span>],
+      <span class="hljs-attr">collection</span>: [
+        {
+          <span class="hljs-attr">type</span>: <span class="hljs-string">'ROUTE'</span>,
+          <span class="hljs-attr">path</span>: <span class="hljs-string">'/'</span>,<span class="hljs-comment">// the route become / since we have /users as a prefix</span>
+          callback: <span class="hljs-function">(<span class="hljs-params">request, response</span>) =&gt;</span> {
+            <span class="hljs-keyword">const</span> ctrl = <span class="hljs-keyword">new</span> UserIndexController()
+            <span class="hljs-keyword">return</span> ctrl.index(request, response)
+          }
+          <span class="hljs-comment">// no need to define the GET method</span>
+        },
+        {
+          <span class="hljs-attr">type</span>: <span class="hljs-string">'ROUTE'</span>,
+          <span class="hljs-attr">path</span>: <span class="hljs-string">'/'</span>,
+          <span class="hljs-attr">callback</span>: <span class="hljs-function">(<span class="hljs-params">request, response</span>) =&gt;</span> {
+            <span class="hljs-keyword">const</span> ctrl = <span class="hljs-keyword">new</span> UserIndexController()
+            <span class="hljs-keyword">return</span> ctrl.create(request, response)
+          },
+          <span class="hljs-attr">method</span>: [<span class="hljs-string">'POST'</span>]
+        },
+        {
+          <span class="hljs-attr">type</span>: <span class="hljs-string">'ROUTE'</span>,
+          <span class="hljs-attr">path</span>: <span class="hljs-string">'/:id'</span>,
+          <span class="hljs-attr">callback</span>: <span class="hljs-function">(<span class="hljs-params">request, response</span>) =&gt;</span> {
+            <span class="hljs-keyword">const</span> ctrl = <span class="hljs-keyword">new</span> UserIndexController()
+            <span class="hljs-keyword">return</span> ctrl.show(request, response)
+          },
+          <span class="hljs-attr">rules</span>: { <span class="hljs-attr">id</span>: <span class="hljs-regexp">/\d+/</span> }
+        },
+        {
+          <span class="hljs-attr">type</span>: <span class="hljs-string">'ROUTE'</span>,
+          <span class="hljs-attr">path</span>: <span class="hljs-string">'/:id'</span>,
+          <span class="hljs-attr">callback</span>: <span class="hljs-function">(<span class="hljs-params">request, response</span>) =&gt;</span> {
+            <span class="hljs-keyword">const</span> ctrl = <span class="hljs-keyword">new</span> UserIndexController()
+            <span class="hljs-keyword">return</span> ctrl.update(request, response)
+          },
+          <span class="hljs-attr">method</span>: [<span class="hljs-string">'PATCH'</span>],
+          <span class="hljs-attr">rules</span>: { <span class="hljs-attr">id</span>: <span class="hljs-regexp">/\d+/</span> }
+        },
+        {
+          <span class="hljs-attr">type</span>: <span class="hljs-string">'ROUTE'</span>,
+          <span class="hljs-attr">path</span>: <span class="hljs-string">'/:id'</span>,
+          <span class="hljs-attr">callback</span>: <span class="hljs-function">(<span class="hljs-params">request, response</span>) =&gt;</span> {
+            <span class="hljs-keyword">const</span> ctrl = <span class="hljs-keyword">new</span> UserIndexController()
+            <span class="hljs-keyword">return</span> ctrl.delete(request, response)
+          },
+          <span class="hljs-attr">method</span>: [<span class="hljs-string">'DELETE'</span>],
+          <span class="hljs-attr">rules</span>: { <span class="hljs-attr">id</span>: <span class="hljs-regexp">/\d+/</span> }
+        }
+      ]
+    }
+  ]
+}
+
+</code></pre>
+<p>This code doesn't show all the potential of the context, but it shows the syntax. When you'll learn the next chapter about the middleware, and with the example of the administration, you will easily understand the power of the contexts.</p>
+<p>Of course, you can chain them. It means we could add the resources with the id in the route parameter in a context which manage it. If we want to provide security on the update/delete route of our user entity (to check that the user updated is the one connected), we are able to set a middleware for a context and put these route in it. And if you add a route which requires this same security, you can add it in the block without thinking about it, you will have the same behaviour for all the routes in the context.</p>
+<p>It's all about reliability, not repeating yourself, isolating the similar routes in a same block to keep all of it ordered. The next chapter will explain the middlewares and you will maybe see how useful the context can be.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/cherry-documentation/docs/routing/basic"><span class="arrow-prev">← </span><span>Basic routes</span></a><a class="docs-next button" href="/cherry-documentation/docs/routing/middlewares"><span>Middlewares</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/cherry-documentation/" class="nav-home"><img src="/cherry-documentation/img/favicon.ico" alt="Cherry Documentation" width="66" height="58"/></a><div><h5>Docs</h5><a href="/cherry-documentation/docs/en/getting-started/overview.html">Getting Started</a><a href="/cherry-documentation/docs/en/doc2.html">Guides (TODO)</a><a href="/cherry-documentation/docs/en/doc3.html">API Reference (TODO)</a></div><div><h5>Community</h5><a href="/cherry-documentation/en/users.html">User Showcase (TODO)</a><a href="https://discord.gg/gJyu9p2">Project Chat</a><a href="https://twitter.com/lundprod" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/cherry-documentation/blog">Blog</a><a href="https://github.com/lund-org/">GitHub</a><a class="github-button" href="https://github.com/lund-org/cherry" data-icon="octicon-star" data-count-href="/lund-org/cherry" data-show-count="true" data-count-aria-label="# cherry on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2020 Lund-Org</section></footer></div></body></html>
