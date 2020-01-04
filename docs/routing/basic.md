@@ -166,7 +166,7 @@ In Cherry, we have 3 types of routes.
 |Option name|Optionnal|Value Type|Description|Default value|
 |---|---|---|---|---|
 |path|❌|string&#124;regex|The format of the url path|-|
-|callback|❌|function|The function to execute when the url is reached|-|
+|callback|❌|function(request, response)|The function to execute when the url is reached|-|
 |method|✔|array&lt;string&gt;|The HTTP methods which should trigger the callback if the url match|`null`|
 |name|✔|string|The name of the route to identify it. Can be useful in hooks ([see later](misc/hooks.md))|`no-name-route-`|
 |rules|✔|object|The pattern for the parameters in the routes. The key is the parameter name, the value the regex to match|`{}`|
