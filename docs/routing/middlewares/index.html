@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Middlewares · Cherry Documentation</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="middlewares"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Middlewares · Cherry Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://lund-org.github.io/cherry-documentation/"/><meta property="og:description" content="middlewares"/><meta property="og:image" content="https://lund-org.github.io/cherry-documentation/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://lund-org.github.io/cherry-documentation/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/cherry-documentation/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="alternate" type="application/atom+xml" href="https://lund-org.github.io/cherry-documentation/blog/atom.xml" title="Cherry Documentation Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://lund-org.github.io/cherry-documentation/blog/feed.xml" title="Cherry Documentation Blog RSS Feed"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/cherry-documentation/js/scrollSpy.js"></script><link rel="stylesheet" href="/cherry-documentation/css/main.css"/><script src="/cherry-documentation/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/cherry-documentation/"><img class="logo" src="/cherry-documentation/img/favicon.ico" alt="Cherry Documentation"/><h2 class="headerTitleWithLogo">Cherry Documentation</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/cherry-documentation/docs/getting-started/overview" target="_self">Docs</a></li><li class=""><a href="/cherry-documentation/help" target="_self">Help</a></li><li class=""><a href="/cherry-documentation/blog/" target="_self">Blog</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Routing</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Getting Started</h3><ul class=""><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/getting-started/overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/getting-started/installation">Installation</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/getting-started/server-creation">Create a server</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/getting-started/adding-routes">Adding routes</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/getting-started/next">What&#x27;s next ?</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Routing</h3><ul class=""><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/routing/public">Public resources</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/routing/basic">Basic routes</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/routing/context">Route contexts</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/cherry-documentation/docs/routing/middlewares">Middlewares</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/routing/redirections">Redirections</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Views &amp; Server response</h3><ul class=""><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/views/default-pages">Default error pages</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/views/html">Render a html view</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/views/json">Render a json payload</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/views/download">Download response</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Plugins</h3><ul class=""><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/plugins/overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/plugins/view-rendering">View rendering plugins</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/plugins/orm">ORM Plugins</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Miscellaneous features</h3><ul class=""><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/misc/hooks">Hooks</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/misc/server-config">Server Config</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/misc/coming">Coming Soon...</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Best Practices</h3><ul class=""><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/best-practices">Best Practices</a></li></ul></div></div></section></div><script>
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Middlewares · Cherry Documentation</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="First of all, let&#x27;s define what is a middleware. This is a little component that will be executed between the creation of the request and the execution of the callback bound to your route. It&#x27;s very useful to add some checks (security, permissions...) or to process data (to prepare it for the callback for example)."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Middlewares · Cherry Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://lund-org.github.io/cherry-documentation/"/><meta property="og:description" content="First of all, let&#x27;s define what is a middleware. This is a little component that will be executed between the creation of the request and the execution of the callback bound to your route. It&#x27;s very useful to add some checks (security, permissions...) or to process data (to prepare it for the callback for example)."/><meta property="og:image" content="https://lund-org.github.io/cherry-documentation/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://lund-org.github.io/cherry-documentation/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/cherry-documentation/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="alternate" type="application/atom+xml" href="https://lund-org.github.io/cherry-documentation/blog/atom.xml" title="Cherry Documentation Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://lund-org.github.io/cherry-documentation/blog/feed.xml" title="Cherry Documentation Blog RSS Feed"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/cherry-documentation/js/scrollSpy.js"></script><link rel="stylesheet" href="/cherry-documentation/css/main.css"/><script src="/cherry-documentation/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/cherry-documentation/"><img class="logo" src="/cherry-documentation/img/favicon.ico" alt="Cherry Documentation"/><h2 class="headerTitleWithLogo">Cherry Documentation</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/cherry-documentation/docs/getting-started/overview" target="_self">Docs</a></li><li class=""><a href="/cherry-documentation/help" target="_self">Help</a></li><li class=""><a href="/cherry-documentation/blog/" target="_self">Blog</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Routing</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Getting Started</h3><ul class=""><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/getting-started/overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/getting-started/installation">Installation</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/getting-started/server-creation">Create a server</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/getting-started/adding-routes">Adding routes</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/getting-started/next">What&#x27;s next ?</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Routing</h3><ul class=""><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/routing/public">Public resources</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/routing/basic">Basic routes</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/routing/context">Route contexts</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/cherry-documentation/docs/routing/middlewares">Middlewares</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/routing/redirections">Redirections</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Views &amp; Server response</h3><ul class=""><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/views/default-pages">Default error pages</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/views/html">Render a html view</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/views/json">Render a json payload</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/views/download">Download response</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Plugins</h3><ul class=""><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/plugins/overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/plugins/view-rendering">View rendering plugins</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/plugins/orm">ORM Plugins</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Miscellaneous features</h3><ul class=""><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/misc/hooks">Hooks</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/misc/server-config">Server Config</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/misc/coming">Coming Soon...</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Best Practices</h3><ul class=""><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/best-practices">Best Practices</a></li></ul></div></div></section></div><script>
             var coll = document.getElementsByClassName('collapsible');
             var checkActiveCategory = true;
             for (var i = 0; i < coll.length; i++) {
@@ -54,5 +54,103 @@
                 };
               }
             });
-        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Middlewares</h1></header><article><div><span><p>middlewares</p>
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Middlewares</h1></header><article><div><span><p>First of all, let's define what is a middleware. This is a little component that will be executed between the creation of the request and the execution of the callback bound to your route. It's very useful to add some checks (security, permissions...) or to process data (to prepare it for the callback for example).</p>
+<p>Here are the datas to describe a middleware :</p>
+<table>
+<thead>
+<tr><th>Option name</th><th>Optionnal</th><th>Value Type</th><th>Description</th><th>Default value</th></tr>
+</thead>
+<tbody>
+<tr><td>name</td><td>❌</td><td>string</td><td>The name of the middleware to register it in the routes</td><td>-</td></tr>
+<tr><td>callback</td><td>❌</td><td>function(next, request, response)</td><td>The method executed when the middleware is triggered</td><td>-</td></tr>
+</tbody>
+</table>
+<p>As you can see, the callback doesn't have just the request and the response object, there is the <code>next</code> parameter which is the next entity to execute. It can be a middleware (because you can chain it) or the route callback. If you doesn't respond to the client request (thanks to the response object) or if you don't execute the next action of the callback chain, the request will be pending.</p>
+<p>Let's imagine an user which is connected to your website, and you put in its cookies something to recognize him like a hash. We want to get the real user behind this hash and not call a method which do it in every controller. The middleware is the perfect tool to achieve it.</p>
+<p>First of all, let's declare a middleware without writing the content of the callback</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// middlewares.js</span>
+
+<span class="hljs-built_in">module</span>.exports = [
+  {
+    <span class="hljs-attr">name</span>: <span class="hljs-string">'getConnectedUser'</span>
+    callback: <span class="hljs-function">(<span class="hljs-params">next, req, res</span>) =&gt;</span> {
+      <span class="hljs-comment">// nothing for now</span>
+      next.resolve(req, res)
+    }
+  }
+]
+
+</code></pre>
+<p>Now we need to register our middleware in the Cherry options, under the key... middlewares. Of course.</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// main.js</span>
+<span class="hljs-keyword">const</span> Cherry = <span class="hljs-built_in">require</span>(<span class="hljs-string">'@lund-org/cherry'</span>)
+<span class="hljs-comment">// We get our route config</span>
+<span class="hljs-keyword">const</span> routes = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./config/routes.js'</span>)
+<span class="hljs-comment">// We get our middleware config</span>
+<span class="hljs-keyword">const</span> middlewares = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./config/middlewares.js'</span>)
+
+<span class="hljs-keyword">const</span> options = {
+  <span class="hljs-attr">servers</span>: [
+    { <span class="hljs-attr">port</span>: <span class="hljs-number">80</span> }
+  ],
+  routes,
+  middlewares <span class="hljs-comment">// as simple as the routes</span>
+}
+<span class="hljs-keyword">const</span> cherry = <span class="hljs-keyword">new</span> Cherry()
+cherry.configure(options)
+cherry.start(options)
+</code></pre>
+<p>So now, Cherry will know what is the 'getConnectedUser' middleware. In your route configuration, you can now use it.</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// routes.js</span>
+
+<span class="hljs-built_in">module</span>.exports = {
+  <span class="hljs-attr">router</span>: [
+    {
+      <span class="hljs-attr">type</span>: <span class="hljs-string">'ROUTE'</span>,
+      <span class="hljs-attr">path</span>: <span class="hljs-string">'/my/route'</span>,
+      <span class="hljs-attr">callback</span>: <span class="hljs-function">(<span class="hljs-params">request, response</span>) =&gt;</span> {
+        response.end(<span class="hljs-string">'&lt;div&gt;It works !&lt;/div&gt;'</span>)
+      },
+      <span class="hljs-attr">middlewares</span>: [<span class="hljs-string">'getConnectedUser'</span>]
+    }
+  ]
+}
+</code></pre>
+<p>Just with it, the middleware will be executed each time the route is reached. So now, let's code what we need in the middleware, I will just get the cookie value I need and code like if we had an entire app (the functions used don't exist, but it's for the example) :</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// middlewares.js</span>
+
+<span class="hljs-comment">// Imagine an user repository which allows you to retrieve the users from a database</span>
+<span class="hljs-keyword">const</span> UserRepository = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../src/repositories/UserRepository'</span>)
+
+<span class="hljs-built_in">module</span>.exports = [
+  {
+    <span class="hljs-attr">name</span>: <span class="hljs-string">'getConnectedUser'</span>,
+    <span class="hljs-attr">callback</span>: <span class="hljs-function">(<span class="hljs-params">next, request, response</span>) =&gt;</span> {
+      request.user = <span class="hljs-literal">null</span>
+      <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> request.headers.cookie !== <span class="hljs-string">'undefined'</span>) {
+        <span class="hljs-comment">// We get the value of the cookie 'my-super-hash' thanks to a regex</span>
+        <span class="hljs-comment">// It is under the format : "CookieName1=Value1; CookieName2=Value2"</span>
+        <span class="hljs-keyword">const</span> userHash = request.headers.cookie.match(<span class="hljs-regexp">/my-super-hash=([A-Za-z0-9]+)/</span>)
+
+        <span class="hljs-comment">// if there are no match, it means the cookie doesn't exist</span>
+        <span class="hljs-keyword">if</span> (userHash) {
+          <span class="hljs-keyword">const</span> user = UserRepository.findByHash(userHash[<span class="hljs-number">1</span>])
+
+          <span class="hljs-comment">// if the user is found, we put it in the request</span>
+          <span class="hljs-keyword">if</span> (user) {
+            request.user = user
+          }
+        }
+      }
+
+      next.resolve(request, response)
+    }
+  }
+]
+
+</code></pre>
+<p>And now, our registered route can access to the current connected user entity by getting it thanks to <code>request.user</code>
+Because a request is just living during one call, you can put datas inside, just remember to keep it clean. You can for example set your datas in an object to have everything at the same place.</p>
+<p>Our example is just to get a data easily for several routes, if we wanted to have a security, like an area available only for connected user (the user account management for example), we could have throw an error, or returned a 404 page thanks to the <code>response</code> variable.</p>
+<p>And now, you can understand how much the context routes can be useful with the middlewares. It avoids to put in on every route, you just have to set it on the context and every routes inside will use it.</p>
 </span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/cherry-documentation/docs/routing/context"><span class="arrow-prev">← </span><span>Route contexts</span></a><a class="docs-next button" href="/cherry-documentation/docs/routing/redirections"><span>Redirections</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/cherry-documentation/" class="nav-home"><img src="/cherry-documentation/img/favicon.ico" alt="Cherry Documentation" width="66" height="58"/></a><div><h5>Docs</h5><a href="/cherry-documentation/docs/en/getting-started/overview.html">Getting Started</a><a href="/cherry-documentation/docs/en/doc2.html">Guides (TODO)</a><a href="/cherry-documentation/docs/en/doc3.html">API Reference (TODO)</a></div><div><h5>Community</h5><a href="/cherry-documentation/en/users.html">User Showcase (TODO)</a><a href="https://discord.gg/gJyu9p2">Project Chat</a><a href="https://twitter.com/lundprod" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/cherry-documentation/blog">Blog</a><a href="https://github.com/lund-org/">GitHub</a><a class="github-button" href="https://github.com/lund-org/cherry" data-icon="octicon-star" data-count-href="/lund-org/cherry" data-show-count="true" data-count-aria-label="# cherry on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2020 Lund-Org</section></footer></div></body></html>
