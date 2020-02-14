@@ -53,8 +53,6 @@ cherry.start(options)
 <!-- config/routes.js -->
 
 ```javascript
-const UserIndexController = require('../modules/users/IndexController')
-
 module.exports = {
   router: [
     {
