@@ -13,6 +13,13 @@ const MarkdownBlock = CompLibrary.MarkdownBlock; /* Used to read markdown */
 const Container = CompLibrary.Container;
 const GridBlock = CompLibrary.GridBlock;
 
+const getDocUrl = (siteConfig, language) => {
+  const { baseUrl, docsUrl } = siteConfig;
+  const docsPart = `${docsUrl ? `${docsUrl}/` : ''}`;
+  const langPart = `${language ? `${language}/` : ''}`;
+  return (doc) => `${baseUrl}${docsPart}${langPart}${doc}`;
+}
+
 class HomeSplash extends React.Component {
   render() {
     const {siteConfig, language = ''} = this.props;
@@ -64,9 +71,7 @@ class HomeSplash extends React.Component {
         <div className="inner">
           <ProjectTitle siteConfig={siteConfig} />
           <PromoSection>
-            <Button href="#try">Try It Out</Button>
-            {/* <Button href={docUrl('doc1.html')}>Example Link</Button> */}
-            {/* <Button href={docUrl('doc2.html')}>Example Link 2</Button> */}
+            <Button href="https://github.com/lund-org/cherry" target="_blank" rel="noreferrer" rel="noopener">Try It Out</Button>
           </PromoSection>
         </div>
       </SplashContainer>
@@ -96,8 +101,13 @@ class Index extends React.Component {
       <div
         className="productShowcaseSection paddingBottom"
         style={{textAlign: 'center'}}>
-        <h2>Feature Callout</h2>
-        <MarkdownBlock>These are features of this project</MarkdownBlock>
+        <h2>Documentation</h2>
+        <div>Want to learn how to discover Cherry ?</div>
+        <div className="pluginWrapper buttonWrapper">
+          <a className="button" href={getDocUrl(siteConfig, language)('getting-started/overview')}>
+            Checkout the documentation
+          </a>
+        </div>
       </div>
     );
 
@@ -149,16 +159,16 @@ class Index extends React.Component {
       <Block layout="fourColumn">
         {[
           {
-            content: 'This is the content of my feature',
+            content: 'Cherry was made to provide a base where you add what you want to use.<br />What\'s the point of a tool with 200 features if you just want 2 of them ?',
             image: `${baseUrl}img/undraw_react.svg`,
             imageAlign: 'top',
-            title: 'Feature One',
+            title: 'Lightweight and Modular',
           },
           {
-            content: 'The content of my second feature',
+            content: 'Every features are made to be easily integrated',
             image: `${baseUrl}img/undraw_operating_system.svg`,
             imageAlign: 'top',
-            title: 'Feature Two',
+            title: 'Keep it simple',
           },
         ]}
       </Block>
