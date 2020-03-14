@@ -24,6 +24,7 @@
       "plugins/overview",
       "plugins/view-rendering",
       "plugins/orm",
+      "plugins/request",
       "plugins/creation"
     ],
     "Miscellaneous features": [
