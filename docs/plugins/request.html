@@ -1,0 +1,120 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Request Plugins · Cherry Documentation</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Another core plugin is the one with the identifier `RequestEngine`."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Request Plugins · Cherry Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://lund-org.github.io/cherry-documentation/"/><meta property="og:description" content="Another core plugin is the one with the identifier `RequestEngine`."/><meta property="og:image" content="https://lund-org.github.io/cherry-documentation/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://lund-org.github.io/cherry-documentation/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/cherry-documentation/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="alternate" type="application/atom+xml" href="https://lund-org.github.io/cherry-documentation/blog/atom.xml" title="Cherry Documentation Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://lund-org.github.io/cherry-documentation/blog/feed.xml" title="Cherry Documentation Blog RSS Feed"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/cherry-documentation/js/scrollSpy.js"></script><link rel="stylesheet" href="/cherry-documentation/css/main.css"/><script src="/cherry-documentation/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/cherry-documentation/"><img class="logo" src="/cherry-documentation/img/favicon.ico" alt="Cherry Documentation"/><h2 class="headerTitleWithLogo">Cherry Documentation</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/cherry-documentation/docs/getting-started/overview" target="_self">Docs</a></li><li class=""><a href="/cherry-documentation/help" target="_self">Help</a></li><li class=""><a href="/cherry-documentation/blog/" target="_self">Blog</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Plugins</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Getting Started</h3><ul class=""><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/getting-started/overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/getting-started/installation">Installation</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/getting-started/server-creation">Create a server</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/getting-started/adding-routes">Adding routes</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/getting-started/next">What&#x27;s next ?</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Routing</h3><ul class=""><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/routing/public">Public resources</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/routing/basic">Basic routes</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/routing/context">Route contexts</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/routing/middlewares">Middlewares</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/routing/redirections">Redirections</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Views &amp; Server response</h3><ul class=""><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/views/default-pages">Default error pages</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/views/html">Render a html view</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/views/json">Render a json payload</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/views/download">Download response</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Plugins</h3><ul class=""><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/plugins/overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/plugins/view-rendering">View rendering plugins</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/plugins/orm">ORM Plugins</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/cherry-documentation/docs/plugins/request">Request Plugins</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/plugins/creation">Create your own plugins</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Miscellaneous features</h3><ul class=""><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/misc/hooks">Hooks</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/misc/server-config">Server Config</a></li><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/misc/coming">Coming Soon...</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Best Practices</h3><ul class=""><li class="navListItem"><a class="navItem" href="/cherry-documentation/docs/best-practices">Best Practices</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Request Plugins</h1></header><article><div><span><p>Another core plugin is the one with the identifier <code>RequestEngine</code>.
+A default behavior exists to handle the requests. If you send a payload as a json, it will be parsed otherwise, it will be considered as a querystring. These POST datas and the GET datas are aggregate in a <code>params</code> attribute of the request to access easily to it in your route callback.</p>
+<p>If you want to handle a x-www-form-urlencoded form, it is not native to Cherry and you need to create a plugin for it. Here is the interface to follow for a request plugin :</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyRequestPlugin</span> </span>{
+  <span class="hljs-comment">// The method called with the "onData" event of the request</span>
+  <span class="hljs-comment">// It gives you chunk of data you can aggregate in the chunks array</span>
+  aggregateData (promiseCallbacks, chunks, data) {
+    <span class="hljs-comment">/*
+      - promiseCallbacks is an object like this : { resolve, reject }.
+      It allows to finish the request with a success or an error. I don't see a reason to use it, but you can
+      - chunks is an array of all the chunk you added with this method
+      - data is a chunk of the payload you received
+    */</span>
+  }
+
+  <span class="hljs-comment">// Once you got all the payload of you request, if no error happened, you can process the entire data</span>
+  <span class="hljs-comment">// The default process is to parse the payload and store the data in the request with the attributes "params" as an object</span>
+  <span class="hljs-comment">// It is triggered on the event onEnd of the request</span>
+  finalizeRequest (promiseCallbacks, chunks) {
+    <span class="hljs-comment">/*
+      - promiseCallbacks is an object like this : { resolve, reject }.
+      It allows to finish the request with a success or an error. The default method resolve "this" which is the request object itself
+      - chunks is an array of all the chunk you added with this method
+    */</span>
+  }
+
+  <span class="hljs-comment">// If an error happened while the request is processed, this callback is triggered</span>
+  errorManagement (promiseCallbacks, error) {
+    <span class="hljs-comment">/*
+      - promiseCallbacks is an object like this : { resolve, reject }.
+      It allows to finish the request with a success or an error. The default method resolve "this" which is the request object itself
+      - error is an error received through the event onError of the request (request abort for example)
+    */</span>
+  }
+}
+</code></pre>
+<p>If you want to create a simple API or a simple website with just classic forms, the default request plugin can be used.</p>
+<p>In an other hand, if you want to upload file or use a x-www-form-urlencoded form, this request manager is not enough.</p>
+<blockquote>
+<p>An issue in the Github repository exist to provide this core plugin, but it needs to be done.</p>
+</blockquote>
+<p>As said previously, all the datas are set in a <code>params</code> attribute of the request object. So imagine you have this request coming :</p>
+<pre><code class="hljs">POST <span class="hljs-meta-keyword">/my/</span>route?foo=bar<span class="hljs-variable">&amp;limit</span>=<span class="hljs-number">1</span>
+Body :
+{ <span class="hljs-string">"foo"</span>: <span class="hljs-string">"nobar"</span>, <span class="hljs-string">"page"</span>: <span class="hljs-number">12</span> }
+</code></pre>
+<p>You can find all these datas like this :</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">routeCallback</span> (<span class="hljs-params">request, response</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(request.params)
+  <span class="hljs-comment">/*
+   * {
+   *   foo: 'nobar',
+   *   page: 12,
+   *   limit: 1
+   * }
+   */</span>
+}
+</code></pre>
+<blockquote>
+<p>As you can see, the payload data has more priority than the query parameter. So the &quot;foo=bar&quot; in the url is lost. You can still find it through the request object with a parsing (with the url module of node) and the url provided by request.url</p>
+</blockquote>
+<p>So now, we've seen the core plugins. But what about your custom plugins you can add to your app, or even plugins you can develop and share in the open source world ?</p>
+<p>Let's check in the next chapter.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/cherry-documentation/docs/plugins/orm"><span class="arrow-prev">← </span><span>ORM Plugins</span></a><a class="docs-next button" href="/cherry-documentation/docs/plugins/creation"><span>Create your own plugins</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/cherry-documentation/" class="nav-home"><img src="/cherry-documentation/img/favicon.ico" alt="Cherry Documentation" width="66" height="58"/></a><div><h5>Docs</h5><a href="/cherry-documentation/docs/en/getting-started/overview.html">Getting Started</a><a href="/cherry-documentation/docs/en/doc2.html">Guides (TODO)</a><a href="/cherry-documentation/docs/en/doc3.html">API Reference (TODO)</a></div><div><h5>Community</h5><a href="/cherry-documentation/en/users.html">User Showcase (TODO)</a><a href="https://discord.gg/gJyu9p2">Project Chat</a><a href="https://twitter.com/lundprod" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/cherry-documentation/blog">Blog</a><a href="https://github.com/lund-org/">GitHub</a><a class="github-button" href="https://github.com/lund-org/cherry" data-icon="octicon-star" data-count-href="/lund-org/cherry" data-show-count="true" data-count-aria-label="# cherry on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2020 Lund-Org</section></footer></div></body></html>
